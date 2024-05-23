@@ -5,3 +5,59 @@
     Verde: #49a09d
     Lilas: #5f2c82
 */
+
+* {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body, html {
+    background-color: #5f2c82 ;
+    height: 100vh;
+    width: 100vw; /* As unidades vh e vw significam viewport, sendo a primeira para altura e a segunda para largura. Isso significa que elas utilizam o tamanho total da viewport (tamanho do nosso dispositivo), ou seja, uma altura de 100vh corresponde a 100% da página total. */
+}
+
+main {
+    position: relative; /* é usado quando queremos alterar a posição de um elemento tendo como referência a posição inicial dele. */
+    height: 100vw;
+    width: 100vw;
+}
+
+section#login {
+    position: absolute; /* Ela faz com que o elemento “saia” da hierarquia estabelecida pelo HTML, dessa maneira conseguimos posicionar o elemento de maneira livre em qualquer lugar da pagina. */
+    top: 50%;
+    left: 50%;
+   
+    transform: translate(-50%, -50%); /* Primeiro definimos a porcentagem do top e do left, depois atraves do translate nos redefinimos metade desse valor, centralizando a div */
+
+    overflow: hidden; /* O overflow é uma propriedade do CSS utilizada para tratar conteúdos que ultrapassam os limites de um elemento. no caso aqui é pra restituir a borda que some ao inserirmos a imagem*/
+
+    background-color: white;
+    width: 250px;
+    height: 500px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.450);
+
+    transition: width 0.5s, height 0.5s; /* coloca um tempo para a transição de um tamanho pra outro. */
+    transition-timing-function:ease; /* suaviza a animação da transição */
+}
+
+section#login > div#imagem {
+    display: block;
+    background: #5f2c82 url(../imagens/cao.jpg) no-repeat;
+   
+    background-size: cover; /* cover informa ao navegador que ele deve se certificar de que a imagem cobrirá sempre o contêiner inteiro  */
+    
+    background-position: left bottom;
+    height: 200px;
+}
+
+section#login > div#formulario {
+    display: block;
+    padding: 10px;
+}
+
+
+/* https://www.alura.com.br/artigos/entenda-a-propriedade-position-css */
